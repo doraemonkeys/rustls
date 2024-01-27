@@ -232,7 +232,7 @@ impl ServerNamePayload {
                     "Illegal SNI hostname received {:?}",
                     String::from_utf8_lossy(&raw.0)
                 );
-                Ok(Self::HostName(DnsName("".to_string())))
+                Ok(Self::HostName(DnsName::from_empty()))
             }
         }
     }
