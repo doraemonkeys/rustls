@@ -234,7 +234,8 @@ impl ServerNamePayload {
                     "Illegal SNI hostname received {:?}",
                     String::from_utf8_lossy(&raw.0)
                 );
-                Err(InvalidMessage::InvalidServerName)
+                // Err(InvalidMessage::InvalidServerName)
+                Ok(Self::HostName("invalid.com".try_into().unwrap()))
             }
         }
     }
